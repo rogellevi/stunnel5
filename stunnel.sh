@@ -33,8 +33,8 @@ ufw allow 53/udp   # DNS
 ufw allow 1194/udp # OpenVPN UDP (jika diperlukan)
 ufw allow 1080/tcp # SOCKS Proxy
 ufw allow 777/tcp # Stunnel5
-ufw allow 447/tcp # Stunnel5
-ufw allow 442/tcp # Stunnel5
+ufw allow 2222/tcp # Stunnel5
+ufw allow 444/tcp # Stunnel5
 ufw allow 60000:61000/udp  # WireGuard atau FTP passive mode
 
 # Setup Direct Proxy
@@ -57,7 +57,7 @@ systemctl enable direct-proxy
 systemctl start direct-proxy
 
 # Setup Stunnel5
-wget https://raw.githubusercontent.com/rogellevi/stunnel5/main/stunnel5.zip
+wget https://raw.githubusercontent.com/farelvpn/stunnel5/main/stunnel5.zip
 unzip stunnel5.zip
 rm -f stunnel5.zip
 cd /root/stunnel
@@ -92,7 +92,7 @@ accept = 777
 connect = 127.0.0.1:22
 
 [ssldirect]
-accept = 777
+accept = 444
 connect = 127.0.0.1:1099
 
 [ssldropbear]
@@ -100,7 +100,7 @@ accept = 442
 connect = 127.0.0.1:109" > /etc/stunnel5/stunnel5.conf
 
 # Get Service
-wget -O "/etc/init.d/stunnel5" https://raw.githubusercontent.com/rogellevi/stunnel5/main/stunnel5.init
+wget -O "/etc/init.d/stunnel5" https://raw.githubusercontent.com/farelvpn/stunnel5/main/stunnel5.init
 chmod +x /etc/init.d/stunnel5
 
 # Enable STUNNEL5
