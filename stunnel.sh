@@ -57,7 +57,7 @@ systemctl enable direct-proxy
 systemctl start direct-proxy
 
 # Setup Stunnel5
-wget https://raw.githubusercontent.com/farelvpn/stunnel5/main/stunnel5.zip
+wget https://raw.githubusercontent.com/rogellevi/stunnel5/main/stunnel5.zip
 unzip stunnel5.zip
 rm -f stunnel5.zip
 cd /root/stunnel
@@ -100,7 +100,7 @@ accept = 777
 connect = 127.0.0.1:109" > /etc/stunnel5/stunnel5.conf
 
 # Get Service
-wget -O "/etc/init.d/stunnel5" https://raw.githubusercontent.com/farelvpn/stunnel5/main/stunnel5.init
+wget -O "/etc/init.d/stunnel5" https://raw.githubusercontent.com/rogellevi/stunnel5/main/stunnel5.init
 chmod +x /etc/init.d/stunnel5
 
 # Enable STUNNEL5
