@@ -33,8 +33,8 @@ ufw allow 53/udp   # DNS
 ufw allow 1194/udp # OpenVPN UDP (jika diperlukan)
 ufw allow 1080/tcp # SOCKS Proxy
 ufw allow 777/tcp # Stunnel5
-ufw allow 2222/tcp # Stunnel5
-ufw allow 444/tcp # Stunnel5
+ufw allow 447/tcp # Stunnel5
+ufw allow 442/tcp # Stunnel5
 ufw allow 60000:61000/udp  # WireGuard atau FTP passive mode
 
 # Setup Direct Proxy
@@ -88,11 +88,11 @@ socket = l:TCP_NODELAY=1
 socket = r:TCP_NODELAY=1
 
 [sslopenssh]
-accept = 2222
+accept = 447
 connect = 127.0.0.1:22
 
 [ssldirect]
-accept = 444
+accept = 442
 connect = 127.0.0.1:1099
 
 [ssldropbear]
