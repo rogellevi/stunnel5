@@ -88,15 +88,15 @@ socket = l:TCP_NODELAY=1
 socket = r:TCP_NODELAY=1
 
 [sslopenssh]
-accept = 447
+accept = 777
 connect = 127.0.0.1:22
 
 [ssldirect]
-accept = 442
+accept = 777
 connect = 127.0.0.1:1099
 
 [ssldropbear]
-accept = 777
+accept = 442
 connect = 127.0.0.1:109" > /etc/stunnel5/stunnel5.conf
 
 # Get Service
